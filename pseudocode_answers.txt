@@ -1,0 +1,49 @@
+###Short Answer
+
+1. Programmers use pseudocode to logically break down what the code will be doing that humans can understand and not computers.
+2. The code would result in an error since pseudocode is meant for humans and not computers.
+
+
+###Programming Assignment
+
+1. "Create a function that takes two numbers and prints out the greater number."
+
+Input first number
+Input second number
+IF the first number is greater than the second number THEN
+  PRINT first number
+ELSE
+  PRINT second number
+ENDIF
+
+2. "Create a function that prints out the numbers from 1 to 100."
+
+SET max to 100
+SET number to 1
+WHILE the number is not equal to max
+  PRINT number
+  ADD 1 to number
+ENDWHILE
+   
+3. "Create a function that searches for a specific entry in a phonebook."
+
+INIT Phonebook array
+INPUT entry
+FOR each entry in the array
+  IF current iteration of phonebook array is equal to entry
+    return current iteration of phonebook
+  ELSE 
+    PRINT no results
+  ENDIF
+ENDFOR
+   
+4. "Using the pseudocode you wrote for the previous question, implement it in any computer language of your choice."
+
+var phonebook = ["One", "Two", "Three"]
+var entry = "Two"
+for (i = 0; i < phonebook.length; i++) {
+  if (phonebook[i] == entry){
+    return phonebook[i];
+  }
+}
+  return('no results');
