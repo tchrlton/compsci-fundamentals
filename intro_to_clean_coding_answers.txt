@@ -1,0 +1,132 @@
+1. Clean code is to be able to have readable, simple, and easy to maintain. Clean code makes it easier to scale code and 
+   allow companies to use their code efficiently. 
+
+2. One industry or common task that computers would need up to date code and clean code are medical devices. These devices
+   would for sure need to operate without any bugs since someone's life is in the hands of it working. 
+
+3. Not clean code because first there are too many comments. 
+   
+   FUNCTION convertDegrees(input, scale)
+     IF scale = "F"
+       SET output to ((input - 32) * (5/9))
+     ELSE 
+       SET output to ((input * 1.8) + 32)
+     ENDIF
+     PRINT output
+   END FUNCTION
+
+4. Most of it is clean except for IF NOT (total = 0). I would change it to IF (total != 0)
+
+5. 
+
+  a. It is not clean code. It needs to be split up into two functions
+
+   FUNCTION calcTotal(subTotal, discountRate) 
+     RETURN var total = subtotal + discountRate + (subTotal * tax)
+   END FUNCTION
+
+   FUNCTION checkPayment(paymentType, amount, total)
+     IF paymentType = 'CASH' THEN
+       PRINT "Change due: " + (amount - total)
+     ELSE IF paymentType = 'CREDIT CARD' THEN
+       PRINT "Your total due is: " + total
+     ENDIF
+   END FUNCTION
+
+  b. Not clean code. There are too many nested IF statements so I need to break them up and simplify the code.
+
+    FUNCTION checkoutBook(book, guest)
+      IF isUpToDate THEN 
+        APPEND book to guest.books
+        SET book.status to "Checked Out"
+        PRINT "Your books have been issued."
+      ELSE 
+        PRINT "Unable to checkout book."
+    END FUNCTION
+
+    FUNCTION isUpToDate(guest)
+      RETURN guest.accountActive AND NOT(guest.hasOverdueBooks) AND (guest.outstandingFees = 0)
+    END FUNCTION
+
+   c. Not clean code. The functions need to be seperated into Classes to help with creating a single responsibility.
+
+    CLASS Balance
+
+     FUNCTION displayBalance
+      PRINT balance
+     END FUNCTION
+    
+    ENDCLASS
+
+    CLASS Transaction
+
+     FUNCTION deposit(amount)
+      SET balance to balance + amount
+     END FUNCTION
+
+     FUNCTION withdraw(amount)
+       IF balance > amount THEN
+         SET balance to balance - amount
+       ENDIF
+     END FUNCTION
+
+    END CLASS
+
+    CLASS Offer
+
+     FUNCTION creditCardOffer
+       IF NOT(customer.hasCreditCard) THEN
+         CALL offerCreditCard
+       ENDIF
+     END FUNCTION
+
+     FUNCTION checkStatus
+       IF NOT(customer.hasCheckingAccount) THEN
+         CALL offerCheckingAccount
+       ENDIF
+     END FUNCTION
+
+    END CLASS
+
+
+###Programming Questions
+
+6. var arr = [10,1,4,6,1,1,2];
+   var rootSum = function(arr) {
+       var sum = arr.reduce((a,b) => a + b, 0);
+       var squareRoot = Math.sqrt(sum);
+
+       if (squareRoot % 1 === 0) {
+           return squareRoot;
+       } else {
+            return sum;
+        }
+   }
+
+7. var arr = [10,1,4,6,1,1,2];
+   var isDuplicate = function(arr) {
+    var counts = [];
+    for(var i = 0; i <= arr.length; i++) {
+        if(counts[arr[i]] === undefined) {
+            counts[arr[i]] = 1;
+        } else {
+            return true;
+        }
+    }
+    return false;
+   }
+
+###Extra Credit
+
+8. function isAnagram(stringOne, stringTwo) {
+    function alphabetize(string) {
+        return string.split('').sort('').join('');
+    }
+    return (alphabetize(stringOne) === alphatbetize(stringTwo));
+   }
+   
+   
+   
+
+   
+
