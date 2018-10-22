@@ -1,0 +1,82 @@
+###Exercises
+
+1. A line of people at an amusement park ride.
+
+*The line is composed of members, represented as strings.
+*There is a front to the line, as well as a back.
+*When someone enters the line, place them at the end.
+*People may leave the line whenever they see fit, and those behind them take their place.
+
+Given the above real-world information, use an array data structure to code the following solution.
+
+a)  Use an array input: ["Vivian", "Ava", "Josh", "Patrick", "Mike"]
+
+let namesInLine = ["Vivian", "Ava", "Josh", "Patrick", "Mike"];
+
+b) Insert a new person, "Mary" at the end of the line. In other words, you should insert Mary after Mike.
+
+let newPerson = (name) => {
+     namesInLine.push(name);
+};
+
+c) Find a person in line named "Josh." This function should return the position of 2 in the array, (recall that arrays are 0-based).
+
+let findPerson = (name) => {
+    return namesInLine.indexOf(name);
+};
+
+d) Find a person in line named "Emily." What should your function return if it does not find the item in the array?
+
+let findPerson = (name) => {
+    let index = namesInLine.indexOf(name);
+    if(index == -1) {
+        return "Person not found.";
+    } else {
+        return index;
+    }
+};
+
+e) What if Ava wants to allow a friend, "Melissa", to cut in line in front of her? How would you code this so Melissa appears before Ava?
+
+let personSkip = (friendName, skipperName) => {
+    let index = namesInLine.indexOf(friendName);
+    namesInLine.splice(index, 0, skipperName);
+    return namesInLine;
+}
+
+f) If Patrick wants to leave the line, how would you delete him from the array?
+
+let personLeave = (name) => {
+    let index = namesInLine.indexOf(name);
+    if(index > -1) {
+      namesInLine.splice(index, 1);
+    }
+    return namesInLine;
+}
+
+
+2. Provide another real-world example that you can model using a data structure.
+
+An important real-world example would be any store inventory. Pretty much any list type of data. 
+
+Example: 
+
+var inventory = [
+    {name: 'headphones',
+     price: 19.99,
+     inStock: true
+    },
+    {name: 'Iphone',
+     price: 799.99,
+     inStock: false
+    }
+]
+
+3. How would your data structure allow developers to access and manipulate the data?
+
+The data structure of an inventory would allow developers to easily find each item in the array by using the appropriate
+methods. They can also see which items are in stock by seeing what each object is set too at that moment. They can access
+the keys in the object to either see the values or change the values. They can sort the items in the array by price, 
+letter of the name in alphabetical order or if its its only in stock. There are tons of ways to utilize the data for a 
+real world inventory to make the company more efficient or easier to maintain. 
+
