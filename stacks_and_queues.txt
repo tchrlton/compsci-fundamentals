@@ -1,0 +1,109 @@
+###Questions
+
+1. A stack uses FILO which is First In Last Out and queue uses FIFO which is First In First Out. These differences
+are key to make sure which one you need to use in coding.
+
+2. The similarities between stacks and queues include that they are both types of data structures and allow developers to
+maintain and manipulate code to be more efficient. 
+
+3. For the UNDO option I would use a stack data structure since it involves using LIFO since whatever you executed last
+will be the first thing taken out of the program. For the REDO option, I would use a queue data structure since it
+is doing the opposite of the UNDO command by redoing it. 
+
+
+###Programming Questions
+
+1.
+
+let reverseString = (original) => {
+    let stack = [];
+    for (let i = 0; i < original.length; i++) {
+        stack.push(original[i]);\
+    }
+    let reverse = "";
+    while (stack.length !== 0) {
+        reverse += stack.pop();
+    }
+    return reverse;
+}
+
+console.log(original);
+console.log(reverse);
+
+
+2. 
+
+class Stack {
+    constructor(){
+        this.pop = function(queue){
+            var newQueue = [];
+            var itemToDelete = [];
+
+            for(var i = 0; i < queue.length; i++){
+                if(i == queue.length - 1) {
+                    return itemToDelete.push(queue[i]);
+                } else {
+                    newQueue.push(queue[i]);
+                }
+            }
+            return itemToDelete;
+        }
+    }
+}
+
+var stack = new Stack();
+console.log(stack.pop("Tommy"));
+
+3. 
+
+class Queue {
+    constructor() {
+     this.items = [];
+    }
+
+    function enqueue(element) {
+        this.items.push(element);
+    } 
+
+    function dequeue(element) {
+        if(this.isEmpty()) {
+            return "Underflow";
+        } else {
+            return this.items.shift();
+        }
+    }
+
+    function front() {
+        if(this.isEmpty()) {
+            return "No elements in queue.";
+        } else {
+            return this.items[0];
+        }
+    }
+
+    function isEmpty() {
+        return this.items.length == 0;
+    }
+
+    function printQueue() {
+        var str = "";
+        for(var i = 0; i < this.items.length; i++) {
+            string += this.items[i] + " ";
+        }
+        return str;
+    }
+}
+
+var queue = new Queue();
+
+queue.enqueue(1); 
+queue.enqueue(2); 
+queue.enqueue(3); 
+queue.enqueue(4); 
+queue.enqueue(5); 
+queue.enqueue(6);
+
+console.log(queue.dequeue());
+
+console.log(queue.front());
+
