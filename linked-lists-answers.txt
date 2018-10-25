@@ -4,4 +4,186 @@
 are more efficient with insertions and deletions than arrays, and they do not waste memory. The cons are that they
 have no random access like with indexes, and sequential access is slower. 
 
-2. A real-world example of a linked-list would be 
+2. A real-world example of a linked-list would be web browswer history. When you check your history on browser you see the
+previously visited sites and also using the forward and backward arrow to go to the specifics links in the linked lists. 
+
+
+###Programming Questions
+
+1. You can only have one head a linked list. The code given is making it to where it sets the head to the new node
+if the head node does not exist (meaning nothing in the list) or if the head does exist then it will make the current
+one the head which cannot happen since there can only be one head in the linked list. 
+
+
+FUNCTION push(element)
+  CREATE node
+  SET node.value TO element
+  SET node.next TO null
+
+  IF the head node does not exist
+    THEN SET head to node
+  ELSE
+    SET current to node
+  END IF
+END FUNCTION
+
+
+function LinkedList() {
+    this.head = null;
+    this.length = 0;
+}
+   
+LinkedList.prototype = {
+
+    Node: function(element) {
+        this.element = element;
+        this.next = null;
+    }
+
+    size: function() {
+        return length;
+    }
+
+    head: function() {
+        return head;
+    }
+
+    push: function(element) {
+        var node = new Node(element);
+
+        if(head === null) {
+            head = null;
+        } else {
+            currentNode = head;
+            
+            while(currentNode.next) {
+                currentNode = currentNode.next;
+            }
+
+            currentNode.next = node;
+        }
+        length ++;
+    }
+}
+
+let newList = new LinkedList();
+newList.push(5);
+
+
+2. 
+
+function LinkedList() {
+    this.head = null;
+    this.size = 0;
+}
+
+LinkedList.prototype = function() {
+        Node: function(element) {
+        this.element = element;
+        this.next = null;
+    }
+
+    size: function() {
+        return length;
+    }
+
+    head: function() {
+        return head;
+    }
+
+    push: function(element) {
+        var node = new Node(element);
+
+        if(head === null) {
+            head = null;
+        } else {
+            currentNode = head;
+            
+            while(currentNode.next) {
+                currentNode = currentNode.next;
+            }
+
+            currentNode.next = node;
+        }
+        length ++;
+    }
+
+    removeDuplicates: function() {
+        current = this.head;
+        while(current != null){
+            if(!current.element){
+                current.element = true;
+            } else {
+                current = current.next;
+                this.size --;
+            }
+        }
+    }
+}
+
+let newList = new LinkedList();
+newList.push(1, 3, 4, 4, 1);
+newList.removeDuplicates();
+console.log(newList);
+
+
+3. 
+
+function LinkedList() {
+    this.head = null;
+    this.size = 0;
+}
+
+LinkedList.prototype = {
+  Node: function(element) {
+   this.element = element;
+   this.next = null;
+  };
+
+  head: function() {
+      return this.head;
+  };
+
+  push: function(element) {
+    var node = new Node(element);
+
+    if(head === null) {
+         head = null;
+    } else {
+        currentNode = head;
+            
+         while(currentNode.next) {
+            currentNode = currentNode.next;
+        }
+
+        currentNode.next = node;
+    }
+    length ++;
+  };
+
+  reverse: function() {
+    var current = this.head;
+    var next = null;
+    var previous = null;
+  
+    while(current) {
+      next = current.next;
+      current.next = previous;
+      previous = current;
+      current = next;
+    }
+    this.head = previous;
+  };
+}
+
+let newList = new LinkedList();
+newList.push(1);
+newList.push(2);
+newList.push(3);
+newList.push(4);
+console.log(newList);
+newList.reverse();
+console.log(newList);
+
+
+
