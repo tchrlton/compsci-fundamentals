@@ -1,0 +1,7 @@
+###Exercises
+
+1. The pros of using linked lists instead of arrays are that they have a dynamic size instead of a fixed size, they
+are more efficient with insertions and deletions than arrays, and they do not waste memory. The cons are that they
+have no random access like with indexes, and sequential access is slower. 
+
+2. A real-world example of a linked-list would be 

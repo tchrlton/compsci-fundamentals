@@ -6,9 +6,8 @@ are key to make sure which one you need to use in coding.
 2. The similarities between stacks and queues include that they are both types of data structures and allow developers to
 maintain and manipulate code to be more efficient. 
 
-3. For the UNDO option I would use a stack data structure since it involves using LIFO since whatever you executed last
-will be the first thing taken out of the program. For the REDO option, I would use a queue data structure since it
-is doing the opposite of the UNDO command by redoing it. 
+3. For the UNDO option I would use a stack data structure since it involves using LIFO since that is the order the
+redo-undo command is used. The last redo command is undone first which is using the LIFO principle. 
 
 
 ###Programming Questions
