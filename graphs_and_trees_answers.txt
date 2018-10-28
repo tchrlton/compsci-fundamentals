@@ -1,0 +1,100 @@
+###Exercises
+
+1. A binary tree is a data structure that consists of nodes and each node may point to a left and a right child. What
+makes it unique from other trees is that it only has up to two nodes which makes it more efficient to search through
+than other trees since it is only up to two choices per node.
+
+2. Heuristics is when engineers use their best guesses when trying to solve an immense task like finding all possible
+paths on a map. A big example is as long as we are getting closer to to the end of the path then we will find one of 
+the shortest paths. 
+
+3. I would say one problem that would use heuristics would be for most games on predictability like chess. There are
+too many ways to know the best path so you would use the typical rule of thumbs or guesstimates to move.
+
+4. Depth-first search is starting at the root node and then picking either the right or left side and then travelling
+down that branch until it reaches the leaf node and then backtracks and goes to the next branch and repeats. Breadth-first 
+search is starting at the root node then going either to the left or right child of that node and then if its not the
+right node then you go to the other child node and then repeat in that kind of horizontal pattern.
+
+5. An undirected, a-cyclic, unweighted graph would have nodes that connect each other ambiguously, do not form loops, and
+would not assign cost of travel. The first graph I think of like that would be a doubly linked list. 
+
+6. A binary search tree would be a directed, a-cyclic, unweighted graph. 
+
+
+###Programming Questions
+
+1. 
+
+class Node {
+    constructor(data) {
+        this.data = data;
+        this.left = null;
+        this.right = null;
+    }
+}
+
+class BST {
+    constructor() {
+        this.root = null;
+    }
+    
+    isPresent(data) {
+        let current = this.root;
+        while (current) {
+            if (data === current.data) {
+                return true;
+            }
+            if (data < current.data) {
+                current = current.left;
+            } else {
+                current = current.right;
+            }
+        }
+        return false;
+    }
+}
+
+const bst = new BST();
+
+
+2. 
+function getDistance(root, node1, node1) {
+    var ancestor = commonAncestor(root, node1, node2);
+    var depth1 = getDepth(root, ancestor);
+    var depth2 = getDepth(root, node1);
+    var depth3 = getDepth(root, node2);
+
+    return depth2 + depth3 - 2 * depth1;
+}
+
+function commonAncestor(currentNode, node1, node2) {
+    if (currentNode === null) {
+        return null;
+    }
+    if (currentNode === node1 || currentNode === node2) {
+        return currentNode;
+    }
+    var left = commonAncestor(currentNode.left, node1, node2);
+    var right = commonAncestor(currentNode.right, node1, node2);
+    if (left != null && right != null) {
+        return currentNode;
+    }
+    return left === null ? right: left;
+}
+
+function getDepth(currentNode, targetNode) {
+    if (currentNode === null) {
+        return -1;
+    }
+    if (currentNode === targetNode) {
+        return 0;
+    }
+    var left = getDepth(currentNode.left, targetNode);
+    var right = getDepth(currentNode.right, targetNode);
+    if (left === -1 && right === -1) {
+        return -1;
+    }
+    return left === -1 ? right + 1: left + 1;
+}
+
