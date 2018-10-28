@@ -27,153 +27,144 @@ FUNCTION push(element)
   END IF
 END FUNCTION
 
-
 function LinkedList() {
-    this.head = null;
-    this.length = 0;
-}
-   
-LinkedList.prototype = {
-
-    Node: function(element) {
+    var length = 0;
+    var head = null;
+    var Node = function(element) {
         this.element = element;
         this.next = null;
-    }
+    };
 
-    size: function() {
+    this.size = function() {
         return length;
-    }
+    };
 
-    head: function() {
+    this.head = function() {
         return head;
-    }
+    };
 
-    push: function(element) {
+    this.push = function(element) {
         var node = new Node(element);
-
-        if(head === null) {
-            head = null;
+        if (head === null) {
+            head = node;
         } else {
-            currentNode = head;
-            
-            while(currentNode.next) {
+            var currentNode = head;
+            while (currentNode.next) {
                 currentNode = currentNode.next;
             }
-
             currentNode.next = node;
         }
         length ++;
-    }
+    };
 }
 
-let newList = new LinkedList();
-newList.push(5);
+const newList = new LinkedList();
+newList.push(1);
+newList.push(2);
+newList.push(3);
+console.log(newList.size());
 
 
 2. 
 
 function LinkedList() {
-    this.head = null;
-    this.size = 0;
-}
-
-LinkedList.prototype = function() {
-        Node: function(element) {
+    var length = 0;
+    var head = null;
+    var Node = function(element) {
         this.element = element;
         this.next = null;
-    }
+    };
 
-    size: function() {
+    this.size = function() {
         return length;
-    }
+    };
 
-    head: function() {
+    this.head = function() {
         return head;
-    }
+    };
 
-    push: function(element) {
+    this.push = function(element) {
         var node = new Node(element);
-
-        if(head === null) {
-            head = null;
+        if (head === null) {
+            head = node;
         } else {
-            currentNode = head;
-            
-            while(currentNode.next) {
+            var currentNode = head;
+            while (currentNode.next) {
                 currentNode = currentNode.next;
             }
-
             currentNode.next = node;
         }
         length ++;
-    }
+    };
 
-    removeDuplicates: function() {
-        current = this.head;
-        while(current != null){
-            if(!current.element){
-                current.element = true;
-            } else {
-                current = current.next;
-                this.size --;
-            }
+    this.removeDuplicates = function() {
+      current = this.head;
+      while(current != null) {
+        if(!current.element) {
+          current.element = true;
+        } else {
+          current = current.next;
+          length --;
         }
-    }
+      } 
+    };
 }
 
-let newList = new LinkedList();
-newList.push(1, 3, 4, 4, 1);
+const newList = new LinkedList();
+newList.push(1);
+newList.push(3);
+newList.push(4);
+newList.push(4);
+console.log(newList.head());
+console.log(newList.size());
 newList.removeDuplicates();
-console.log(newList);
-
+console.log(newList.head());
+console.log(newList.size());
 
 3. 
 
 function LinkedList() {
-    this.head = null;
-    this.size = 0;
+    var length = 0;
+    var head = null;
+    var Node = function(element) {
+        this.element = element;
+        this.next = null;
+    };
+
+    this.size = function() {
+        return length;
+    };
+
+    this.head = function() {
+        return head;
+    };
+
+    this.push = function(element) {
+        var node = new Node(element);
+        if (head === null) {
+            head = node;
+        } else {
+            var currentNode = head;
+            while (currentNode.next) {
+                currentNode = currentNode.next;
+            }
+            currentNode.next = node;
+        }
+        length ++;
+    };
 }
 
-LinkedList.prototype = {
-  Node: function(element) {
-   this.element = element;
-   this.next = null;
-  };
-
-  head: function() {
-      return this.head;
-  };
-
-  push: function(element) {
-    var node = new Node(element);
-
-    if(head === null) {
-         head = null;
-    } else {
-        currentNode = head;
-            
-         while(currentNode.next) {
-            currentNode = currentNode.next;
-        }
-
-        currentNode.next = node;
+function reverse(head) {
+    newHead = head;
+    oldHead = head.next;
+    newHead.next = null;
+    while (oldHead) {
+        current = oldHead;
+        oldHead = oldHead.next;
+        current.next = newHead;
+        newHead = current;
     }
-    length ++;
-  };
-
-  reverse: function() {
-    var current = this.head;
-    var next = null;
-    var previous = null;
-  
-    while(current) {
-      next = current.next;
-      current.next = previous;
-      previous = current;
-      current = next;
-    }
-    this.head = previous;
-  };
+    return newHead;
 }
 
 let newList = new LinkedList();
@@ -181,9 +172,7 @@ newList.push(1);
 newList.push(2);
 newList.push(3);
 newList.push(4);
-console.log(newList);
-newList.reverse();
-console.log(newList);
+console.log(reverse(newList.head()));
 
 
 
