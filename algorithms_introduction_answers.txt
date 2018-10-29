@@ -1,0 +1,70 @@
+###Submission
+
+1. 
+
+Making Coffee:
+
+BEGIN Function makeCoffee
+  IF pot is NOT clean
+    CLEAN pot
+  END IF
+  IF no filter in basket
+    Put filter in basket
+  END IF
+  PUT coffee in filter
+  WHILE coffee is NOT brewed
+    keep brewing coffee
+  END WHILE
+END Function
+
+
+Washing Dishes:
+
+BEGIN FUNCTION washDishes
+  IF water is OFF
+    turn on water
+  END IF
+  IF water is NOT hot
+    turn water to hot
+  IF no water && soap on sponge
+    put water && soap on sponge
+  FOR EACH dish in sink
+    IF dish is dirty
+      clean dish with sponge
+      dry dish
+      put dish away
+    ELSE 
+      GO TO FOR each dish in sink
+    END IF
+  END FOR
+  IF water is on
+    turn off water
+END FUNCTION
+
+
+Peanut Butter and Jelly:
+
+BEGIN FUNCTION makePBJ
+  GET 1 slice of bread
+  OPEN jar of peanut butter
+  OPEN jar of jelly 
+  IF slice of bread does NOT HAVE peanut butter || Jelly
+    put peanut butter && jelly on bread using knife
+  END IF
+  GET 1 slice of bread
+  PLACE second slice of bread on first slice of bread
+  CUT sandwhich in half
+  CLOSE jar of peanut butter && jelly
+END FUNCTION
+
+
+2. One company that used an algorithm to succeed in business was BBVA. Using their customer's data to create algorithms that
+give their customers the best ways to invest and also give them more services to choose from by implement algorithms
+to better serve their customers. Another company was McDonalds that uses an algorithm to pretty much guarantee that 
+the service and food would be the same no matter which store you went. Amazon uses an algorithm to make sure they ship
+the most efficient way possible while also keeping their prime customers having 2 day guaranteed shipping.
+
+3. An algorithm that is more efficient does the same if not better quality in term of code as an inefficent one but
+does it in the shortest amount of time possible or in a shorter time than an inefficient one. 
+  
+  
