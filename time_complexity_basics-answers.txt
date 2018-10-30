@@ -1,0 +1,34 @@
+###Submission
+
+1. Time complexity is a function that estimates the time for a program to execute. This correlates with an algorithm
+since it is the full logical steps needed to complete a certian task or goal so time complexity would be the estimation
+of time it would take to complete the algorithm. 
+
+2. Runtime is often synonymous with time complexity and its used for algorithms and their physical time duration. 
+
+3. The runtime of an algorithm is calculated by adding up how many instructions the algorithm will execute as a function
+of the size of its input, then simplify the expression to the largest term and drop any constants.
+
+4. 
+Most efficient to least efficient:
+
+Constant 
+Logarithmic
+Linear
+Log-Linear
+Quadratic
+Cubic (new one)
+Exponential
+
+5. Trying to find a word in the dictionary would be an example of a logarithmic growth rate. You would be a halving
+the data set (the words) when looking for the first letter of the word since you can see whether to go left or right
+in the dictionary and you know whichever one you do not choose those letters will be ruled out. 
+
+6. O(n); Linear growth rate
+
+7. O(n^2); Quadratic growth rate
+
+8. O(2^n); Exponential growth rate
+
+9. The linear growth rate function would be the most efficient since O(n) is more efficient than the quadratic and
+exponential growth rates. 
