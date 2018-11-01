@@ -1,0 +1,58 @@
+###Submission
+
+1. Recursion is when a function is called within itself. An iteration is when you use a loop to repeat a process.
+
+2. Fibonacci sequence algorithm, finding nodes in a tree, factorial algorithm, GCD (global common divisor) algorithm, and
+primality tester.
+
+3. You should use recursion when an algorithm can be defined as a combination of sub-results starting with known cases and 
+you would use iteration when you need to run straight through a data set. An example of an algorithm that would be best
+for recursion is factorial. An example for iteration would be the fibonacci sequence. 
+
+4. 
+For the factorial algorithm, the iteration has less code than the recursive one, one line less which can make a difference.
+
+For the maximum algorithm, the iteration has way less code and is cleaner than the recursion. 
+
+For the fibonacci algorithm, the iteration and the recursion looks the same in code written and ease of reading as well.
+However, using recursion will make the code less efficient in terms of performance. 
+
+5. 
+function itemCount(array) {
+  var count = 0;
+  var newArray = [];
+
+  function reduce(array) {
+    for(let i = 0; i < array.length; i++) {
+      var element = array[i];
+      if(Array.isArray(element)) {
+        reduce(element);
+      } else {
+        newArray.push(element);
+      }
+    }
+  }
+  reduce(array);
+  return newArray.length;
+}
+
+6. 
+var isPalindrome = (string) => {
+    let strLen = string.length;
+    if (strLen === 0 || strLen === 1){
+        return true;
+    }
+
+    if (string[0] === string[strLen - 1]){
+        return isPalindrome(string.slice(1, strLen - 1));
+    }
+
+    return false;  
+};
+
+console.log(isPalindrome('racecar'));
+
+
+7. When you type in recursion you into google and it says "Did you mean recursion?" that is in itself 
+recursion because it is calling itself within itself just like you typed in google and it will keep saying
+"Did you mean recursion?". It is a cool Easter Egg that they put into their search algorithm. 
