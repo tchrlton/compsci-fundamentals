@@ -1,0 +1,59 @@
+###Short Answer
+
+1. A real world example of linear search would be seeing if someone is in a database by when they logged on or first
+registered. The names would be in no order but you would be able to iterate through each name until you find them.
+
+2. A real world example of a binary search would be finding a book in a library by the title name. It is usually in 
+alphabetical order so it will divide and conquer until the book is found. 
+
+3. Using the alphabetically sorted list, it would take 7 iterations for linear search. 
+
+4. Using the alphabetically sorted list, it would take 2 iterations for binary search.
+
+5. When given an unsorted collection, we would use linear search since with binary search we would not know 
+which part of the collection to get rid of since it is unsorted.
+
+6. When given a sorted collection, we would use binary search since it will be able to divide and conquer faster
+than just iterating through them all. 
+
+
+###Programming Questions
+
+1. 
+var dictionary = ["Aardvark", "Albatross", "Bolt", "Elephant", "Pig", "Shark"];
+
+function wordSearch(arr, word) {
+    var low = arr[0];
+    var high = arr[arr.length - 1];
+
+    while (low <= high){
+        var mid = (arr.indexOf(low) + arr.indexOf(high)) / 2;
+        mid = Math.round(mid);
+
+        if(arr[mid] > word) {
+            high = arr[mid - 1];
+        } else if (arr[mid] < word) {
+            low = arr[mid + 1];
+        } else {
+            return arr[mid];
+        }
+    }
+    return "Word is not in list";
+}
+
+console.log(wordSearch(dictionary, "Albatross"));
+
+
+2.
+var fishTank = ["goldfish", "purple goldfish", "white-spotted goldfish", "red-spotted goldfish"];
+
+function netFish(arr, target) {
+    for(var i = 0; i < arr.length; i++){
+        if(arr[i] === target) {
+            return "You caught the white-spotted goldfish";
+        }
+    }
+    return "There are no white-spotted goldfish in the tank.";
+}
+
+console.log(netFish(fishTank, "white-spotted goldfish"));
