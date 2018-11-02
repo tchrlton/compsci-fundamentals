@@ -1,0 +1,71 @@
+###Submission
+
+1. Pseudocode for bubblesort
+
+FUNCTION bubbleSort(collection)
+  REPEAT
+    SET swapped to false
+
+    FOR i = FIRST INDEX of collection to LAST INDEX of collection - 1
+      IF collection[i] > collection[i + 1] THEN 
+        SET temp to collection[i]
+        SET collection[i] to collection[i + 1]
+        SET collection[i + 1] to temp
+        SET swapped to true
+      END IF
+    END FOR
+  UNTIL swapped is FALSE
+
+  Return collection;
+END FUNCTION
+
+
+2. Pseduocode for quicksort
+
+FUNCTION quickSort(collection)
+  IF collection length <= 1
+    RETURN collection 
+  ELSE 
+    SET left, right to empty arrays
+    SET pivot to last item in collection
+    SET length to length of collection
+
+    FOR i = FIRST INDEX of collection to LAST INDEX of collection - 1
+      IF collection[i] <= pivot
+        PUSH collection[i] to LAST INDEX of left
+      ELSE 
+        PUSH collection[i] to LAST INDEX of right
+      END IF
+    END FOR
+    RETURN quickSort(left).concat(pivot, quickSort(right))
+  END IF
+END FUNCTION
+
+
+3.
+Time complexity is used to show the efficiency of algorithms. The following is the effieciency of each method:
+
+Quicksort:
+Average efficiency: O(n log n)
+The data each halved a number of n times in a quicksort and is iterated only once through the array before it is halved.
+
+Merge sort: 
+Average efficiency: O(n log n)
+Similiar in time complexity to quicksort since it uses the same divide and conquer approach. 
+
+This is compared to:
+selection sort = O(n^2)
+insertion sort = O(n^2)
+bubble sort = O(n^2)
+
+All of these are O(n^2) since they have nested for loops
+
+Quicksort and merge sort are more efficient than the rest because of their time complexity. 
+
+
+4. A bucket sort, or bin sort, is used when the input is uniformly distributed over a range into buckets. The buckets are
+then sorted by other algorithms or by using the bucket sort recursively. The ideal input would be items that are more or less
+uniformely distributed. 
+
+
+
